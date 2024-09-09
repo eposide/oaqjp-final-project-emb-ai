@@ -13,7 +13,8 @@ def emotion_detector(text_to_analyze):
     data =  { "raw_document": { "text": text_to_analyze } }
     # do the call to the api    
     response = requests.post(url, json = data, headers=header)
-    result = dict.fromkeys("anger","discust", "fear", "joy", "sadness", "dominant_emotion");
+    keys = ('anger','disgust', 'fear', 'joy', 'sadness', 'dominant_emotion')
+    result = dict.fromkeys(keys);
     if response.status_code == 400:
     # return the initial result with None values 
         return result
