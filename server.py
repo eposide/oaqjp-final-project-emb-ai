@@ -1,5 +1,7 @@
+''' This application analyses the emotions on a given text 
+'''
 from flask import Flask, render_template, request
-# Import the emotion_detector function from the package 
+# Import the emotion_detector function from the package
 from EmotionDetection.emotion_detection import emotion_detector
 #Initiate the flask app :
 app = Flask("Emotion Detector")
@@ -24,5 +26,4 @@ def render_index_page():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5001)
-
+    app.run(host='0.0.0.0', port=5000)
